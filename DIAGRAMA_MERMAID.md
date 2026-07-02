@@ -1,8 +1,10 @@
-# Diagrama de clases (Mermaid)
-
-```mermaid
+---
+config:
+  layout: elk
+  theme: mc
+---
 classDiagram
-    %% Domain entities
+%% Domain entities
 
     class Jugador {
         - String nombre
@@ -125,7 +127,7 @@ classDiagram
     Planeta <|-- Gaseoso
     Planeta <|-- Volcanico
 
-    %% Asociaciones (direccionales para minimizar cruces)
+    %% Asociaciones
     Jugador "1" --> "1" Nave : posee
     Nave "1" --> "1" Bodega : contiene
     Jugador "1" --> "*" Mision : completó
@@ -133,7 +135,3 @@ classDiagram
     Nave "1" ..> Peligro : puede sufrir
     Planeta "1" ..> Recurso : genera
     Comerciante "1" ..> Jugador : atiende
-
-    %% Layout notes: ordenar visualmente
-    %% Coloca Jugador y Comerciante a la izquierda, Nave/Bodega en el centro, Planeta/Recursos/Peligros a la derecha
-```
